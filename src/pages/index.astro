@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import { site, projects } from '../data/site';
+---
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nagi，亞東科大的學生，平常做網站和專題，也開始接一些網站與小工具的案子。" />
+  <title>Nagi｜網站與專題</title>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<header class="container"><a class="brand" href="#top">nagi<span>.tw</span></a><nav><a href="#work">我做的東西</a><a href="#about">關於</a><a href="#contact">聯絡</a></nav></header>
+<main id="main">
+  <section class="hero container" id="top">
+    <p>嗨，我是 Nagi，亞東科大的學生。</p>
+    <h1>平常寫網站，<br />也做一些專題。</h1>
+    <p class="hero-text">最近想試著接一些案子，把學到的東西拿來幫別人，也替自己的專題存點材料費。</p>
+    <a class="email" href={`mailto:${site.email}`}>有需求的話，寄信給我 <span>↗</span></a>
+  </section>
+
+  <section class="container section" id="about">
+    <h2>我為什麼接案</h2>
+    <div class="copy"><p>我想把自己會的東西拿來做點實際的事。像是幫人做網站、活動頁，或把一個簡單的工具做出來。</p><p>我手上的專題會用到無人機、ESP32 和醫療資安相關設備，材料跟零件真的不便宜。接案的收入可以讓我繼續做下去；每一筆委託對我來說都是很實際的支持。</p><p>如果你有想做的東西，可以把需求和預算寄給我。我會先看看能不能做、怎麼做，再跟你討論報價；聊聊不代表一定要委託。</p></div>
+  </section>
+
+  <section class="container section">
+    <h2>目前能幫忙的事</h2>
+    <p>個人作品集、店家或社團網站、活動頁、手機版排版、既有網站修改，還有小型網站工具。遇到我不熟的需求，我會先說清楚。</p>
+  </section>
+
+  <section class="container section" id="work">
+    <h2>我做過的東西</h2>
+    <p class="note">這些是我自己的專案和團隊作品，還沒有商業接案案例。</p>
+    <div class="project-list">{projects.map(p => <a class="project" href={p.url} target="_blank" rel="noopener noreferrer"><span class="number">{p.number}</span><div><h3>{p.title}</h3><p>{p.description}</p></div><span class="arrow">↗</span></a>)}</div>
+    <a class="github" href={site.githubUrl} target="_blank" rel="noopener noreferrer">更多東西在 GitHub ↗</a>
+  </section>
+
+  <section class="container section">
+    <h2>怎麼開始</h2>
+    <p>寄信跟我說你想做什麼、預算大概多少、希望什麼時候完成。我會回覆能不能做、預估費用和時間；談好之後才開始。</p>
+  </section>
+
+  <section class="container contact" id="contact">
+    <h2>需要幫忙的話，<br />寄信給我。</h2>
+    <a class="email" href={`mailto:${site.email}`}>{site.email} <span>↗</span></a>
+  </section>
+</main>
+<footer class="container"><span>Nagi · 學生／開發者</span><a href="#top">回到上面 ↑</a></footer>
+</body>
+</html>
